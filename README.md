@@ -4,5 +4,8 @@
 
 ##### Dependencies
 
-Dependencies are found in """dependencies.txt"""
+Dependencies are found in *dependencies.txt*.
+
+To install all dependencies run `pip install dependencies.txt`
+
 #### Development workflow
