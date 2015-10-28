@@ -17,7 +17,9 @@ namespace :deploy do
 
 	task :after_deploy do
 		on roles(:web) do
+			execute "workon newshub && pip install -r /home/newshub/webapps/newshub/current/dependencies.txt"
 			execute "workon newshub && python2.7 /home/newshub/webapps/newshub/current/manage.py migrate"
+			execute "workon newshub && python2.7 /home/newshub/webapps/newshub/current/manage.py collectstatic --noinput"
 			execute "/home/newshub/webapps/newshub/apache2/bin/restart"
 		end
 	end
