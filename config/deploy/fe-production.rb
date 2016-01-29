@@ -11,4 +11,4 @@ set :repo_url, 'git@github.com:CUNewsHub/front-end.git'
 set :linked_dirs, %w{media}
 
 # setting deployment directory
-set :deploy_to, "/home/newshub/webapps/staging_newshub_static"
+set :deploy_to, "/home/newshub/webapps/newshub_static"

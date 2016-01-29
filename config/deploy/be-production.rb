@@ -11,16 +11,16 @@ set :linked_files, %w{src/secret_data.py}
 set :repo_url, 'git@github.com:CUNewsHub/back-end.git'
 
 # setting deployment directory
-set :deploy_to, "/home/newshub/webapps/staging_newshub"
+set :deploy_to, "/home/newshub/webapps/newshub"
 
 namespace :deploy do
 
 	task :after_deploy do
 		on roles(:web) do
-			execute "workon newshub && pip install -r /home/newshub/webapps/staging_newshub/current/dependencies.txt"
-			execute "workon newshub && python /home/newshub/webapps/staging_newshub/current/manage.py migrate"
-			execute "workon newshub && python /home/newshub/webapps/staging_newshub/current/manage.py collectstatic --noinput"
-			execute "/home/newshub/webapps/staging_newshub/apache2/bin/restart"
+			execute "workon newshub && pip install -r /home/newshub/webapps/newshub/current/dependencies.txt"
+			execute "workon newshub && python /home/newshub/webapps/newshub/current/manage.py migrate"
+			execute "workon newshub && python /home/newshub/webapps/newshub/current/manage.py collectstatic --noinput"
+			execute "/home/newshub/webapps/newshub/apache2/bin/restart"
 		end
 	end
 
