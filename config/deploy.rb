@@ -17,3 +17,8 @@ set :keep_releases, 5
 
 # setting the temporary directory
 set :tmp_dir, "/home/newshub/tmp"
+
+set :branch, "master"
+if ENV['branch']
+        set :branch, ENV['branch']
+end
